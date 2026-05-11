@@ -1,16 +1,18 @@
 <template>
-  <div class="app-container min-h-screen flex flex-col bg-[#0B1120] text-[#F8FAFC] relative overflow-hidden selection:bg-[#7C3AED]/30 selection:text-white">
+  <div class="app-container min-h-screen flex flex-col bg-[#FAFAFA] text-[#334155] relative overflow-hidden selection:bg-[#3B82F6]/20 selection:text-[#0F172A]">
     <CustomCursor />
     
     <!-- Background Glows -->
-    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full opacity-30 pointer-events-none z-0 transform-gpu" style="background: radial-gradient(circle, rgba(124,58,237,0.4) 0%, rgba(124,58,237,0) 70%);"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-30 pointer-events-none z-0 transform-gpu" style="background: radial-gradient(circle, rgba(6,182,212,0.4) 0%, rgba(6,182,212,0) 70%);"></div>
-    <div class="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none z-0"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full opacity-40 pointer-events-none z-0 transform-gpu blur-[100px]" style="background: radial-gradient(circle, rgba(59,130,246,0.3) 0%, rgba(59,130,246,0) 70%);"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full opacity-40 pointer-events-none z-0 transform-gpu blur-[100px]" style="background: radial-gradient(circle, rgba(14,165,233,0.2) 0%, rgba(14,165,233,0) 70%);"></div>
+    
+    <!-- Light mode subtle pattern -->
+    <div class="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none z-0"></div>
 
     <!-- Floating UI Grids -->
-    <div class="fixed inset-0 grid grid-cols-6 grid-rows-6 opacity-[0.03] pointer-events-none z-0">
+    <div class="fixed inset-0 grid grid-cols-6 grid-rows-6 opacity-[0.05] pointer-events-none z-0">
       <div v-for="i in 36" :key="i" :class="[
-        'border-white',
+        'border-gray-200',
         ((i - 1) % 6 !== 5) ? 'border-r' : '',
         (Math.floor((i - 1) / 6) !== 5) ? 'border-b' : ''
       ]"></div>
